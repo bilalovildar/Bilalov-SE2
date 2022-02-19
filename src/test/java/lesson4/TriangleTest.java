@@ -29,7 +29,6 @@ public class TriangleTest {
     @Test
     @DisplayName("Проверка формулы площади треугольника")
     @Tag("lesson4")
-    //@Tag("lesson4")
     public void areaofTriangleTest() {
         assertEquals(6.0, Triangle.areaOfTriangle(a, b, c), "площадь не верная");
         assertTrue(Triangle.isTriangle(a, b, c), "Не треугольник");
