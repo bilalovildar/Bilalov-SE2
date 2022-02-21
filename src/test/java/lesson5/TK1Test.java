@@ -4,10 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import java.time.Duration;
 
 public class TK1Test extends TKabstract {
 
@@ -24,7 +22,6 @@ public class TK1Test extends TKabstract {
         getdriver().findElement(By.xpath("//input[@id='user-identifier-input']")).sendKeys("ildar14444@mail.ru");
         getdriver().findElement(By.xpath("//input[@id='password-input']")).sendKeys("Geekbrains100");
         getdriver().findElement(By.xpath("//button[@id='submit-button']/span")).click();
-        getdriver().quit(); //закрываем окно
         Assertions.assertTrue(getdriver().findElement(By.id("idcta-username")).getText().equals("Your account"));
     }
 //      new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOf(webElement));  //явное ожидание в том месте где прописали

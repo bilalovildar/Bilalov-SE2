@@ -21,7 +21,7 @@ public abstract class TKabstract {
         ChromeOptions options = new ChromeOptions();    //создаем перем опций
         options.addArguments("start-maximized");   //во весь экран
         options.addArguments("--incognito");     //режим инкогнито
-        options.addArguments("disable-popup-blocking");  //блокировка всплыв окон
+//        options.addArguments("disable-popup-blocking");  //блокировка всплыв окон
 //        options.addArguments("--headless");
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS); //неявное ожидание сразу после создания экземпляра WebDriver, действуют в течение всей жизни этого экземпляра
