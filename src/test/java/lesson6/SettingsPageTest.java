@@ -5,8 +5,6 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
-import static lesson5.teacher.AbstractTest.getDriver;
-
 public class SettingsPageTest extends TKabstractTest {
     //ТЕСТ-КЕЙС5 (редактирование личной карточки-имени)
     @Test

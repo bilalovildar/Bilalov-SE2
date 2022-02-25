@@ -22,17 +22,17 @@ public class TK5Test extends TKabstract {
         getdriver().findElement(By.xpath("//button[@id='submit-button']/span")).click();
         Assertions.assertTrue(getdriver().findElement(By.id("idcta-username")).getText().equals("Your account"));
         getdriver().findElement(By.xpath("//span[@id='idcta-username']")).click();
-        getdriver().findElement(By.xpath("//*[@id='container']/div/div[1]/div/div[2]/div/div/div/a")).click();
+        getdriver().findElement(By.xpath("//*[@id='container']/div/div[1]/div/div[2]/div/div/div/a")).click(); // переход в settings
         Thread.sleep(1000);
-        getdriver().findElement(By.xpath("//*[@id='Display name-field']/div[2]/a/div")).click();
+        getdriver().findElement(By.xpath("//*[@id='Display name-field']/div[2]/a/div")).click();   //выбираем поле имени
         Thread.sleep(1000);
-        getdriver().findElement(By.xpath("//*[@id='displayName-input']")).sendKeys("Ildar");
-        getdriver().findElement(By.xpath("//*[@id='app-container']/div/div/div[2]/div[1]/div[2]/div/div[2]/form/div[2]/button")).click();
+        getdriver().findElement(By.xpath("//*[@id='displayName-input']")).sendKeys("Ildar");  //вписываем новое имя
+        getdriver().findElement(By.xpath("//*[@id='app-container']/div/div/div[2]/div[1]/div[2]/div/div[2]/form/div[2]/button")).click(); //save
         Assertions.assertTrue(getdriver().findElement(By.xpath("//*[@id='app-container']/div/div/div[2]/div[2]/div[2]/div/div[2]/div[1]/div/p")).getText().equals("New display name saved"));
         Thread.sleep(1000);
         getdriver().findElement(By.xpath("//*[@id='Display name-field']/div[2]/a/div")).click();
         Thread.sleep(1000);
-        getdriver().findElement(By.xpath("//*[@id='displayName-input']")).sendKeys("\b\b\b\b\b");
+        getdriver().findElement(By.xpath("//*[@id='displayName-input']")).sendKeys("\b\b\b\b\b");  //удалить слово Ildar
         getdriver().findElement(By.xpath("//*[@id='app-container']/div/div/div[2]/div[1]/div[2]/div/div[2]/form/div[2]/button")).click();
         Assertions.assertTrue(getdriver().findElement(By.id("idcta-username")).getText().equals("Your account"));
     }

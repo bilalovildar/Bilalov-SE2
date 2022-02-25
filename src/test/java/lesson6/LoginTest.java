@@ -1,6 +1,5 @@
 package lesson6;
 
-import lesson5.teacher.AbstractTest;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Tag;

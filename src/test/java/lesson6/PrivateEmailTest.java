@@ -1,14 +1,9 @@
 package lesson6;
 
-import lesson5.teacher.AbstractTest;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class PrivateEmailTest extends TKabstractTest {
     //ТЕСТ-КЕЙС6 (настройки персонализированной рассылки)
