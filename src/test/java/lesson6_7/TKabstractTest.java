@@ -1,4 +1,4 @@
-package lesson6;
+package lesson6_7;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterAll;
@@ -8,12 +8,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import java.util.concurrent.TimeUnit;
 
 public abstract class TKabstractTest {
 
-    private static WebDriver driver;
+    private static EventFiringWebDriver eventDriver;
 
     @BeforeAll
     static void init(){
@@ -23,8 +24,9 @@ public abstract class TKabstractTest {
         options.addArguments("--incognito");     //режим инкогнито
 //        options.addArguments("disable-popup-blocking");  //блокировка всплыв окон
 //        options.addArguments("--headless");
-        driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS); //неявное ожидание сразу после создания экземпляра WebDriver, действуют в течение всей жизни этого экземпляра
+        eventDriver = new EventFiringWebDriver(new ChromeDriver(options));
+        eventDriver.register(new MyWebDriverEventListener());        // обязательно регистрируем
+        eventDriver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS); //неявное ожидание сразу после создания экземпляра WebDriver, действуют в течение всей жизни этого экземпляра
     }
 
 
@@ -38,9 +40,9 @@ public abstract class TKabstractTest {
     @AfterAll
     public static void exit(){
 
-        if(driver !=null) driver.quit();
+        if(eventDriver !=null) eventDriver.quit();
     }
     public WebDriver getdriver() {
-        return driver;
+        return eventDriver;
     }
 }
